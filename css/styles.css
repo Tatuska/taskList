@@ -40,24 +40,7 @@ h2 {
     background-color: #e7f1cc;
 }
 
-.taskField {
-    background-color: #e7f1cc;
-    margin-bottom: 5px;
-
-}
-
-.list {
-    width: 50%;
-    margin: auto;
-
-}
-
 /*styling checkbox*/
-
-label {
-    font-size: 24px;
-}
-
 input[type=checkbox] {
     display: none;
 }
@@ -102,11 +85,6 @@ input[type=checkbox]:checked + label > span {
     text-decoration: line-through;
 }
 
-div.squaredFour {
-    text-align: left;
-    padding-left: 5px;
-}
-
 .checkbox {
     color: #5e5e5e;
     font-size: 18px;
@@ -114,6 +92,28 @@ div.squaredFour {
     font-weight: lighter;
     margin: 0;
 
+}
+
+/*tasklist styling*/
+.taskField {
+    background-color: #e7f1cc;
+    margin-bottom: 5px;
+
+}
+
+.list {
+    width: 50%;
+    margin: auto;
+
+}
+
+label {
+    font-size: 24px;
+}
+
+div.squaredFour {
+    text-align: left;
+    padding-left: 5px;
 }
 
 .line-through {
@@ -141,11 +141,11 @@ div.squaredFour {
     /*margin-top: 3px;*/
 }
 
+
 #wrapper {
     margin-top: 40px;
 }
 
-/*empty storage styling*/
 .emptyStorage {
     color: #5e5e5e;
     text-decoration: underline;

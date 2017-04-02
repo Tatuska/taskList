@@ -19,29 +19,38 @@
     <script src="js/angular.min.js"></script>
     <script src="js/js.js"></script>
 </head>
+<!--setting controller toDoApp-->
 <body ng-app="toDoApp">
 <div class="container text-center" ng-controller="toDoController">
     <div class="toDoName">
         <h1 class="text-center">To do list</h1>
         <h2>What needs to be done?</h2>
+
+        <!--input field for next task-->
         <form class="text-center">
             <input type="text" ng-model="inputTaskName" ng-keypress="($event.charCode==13)?addTask():return"
                    class="inputField">
-            <!--<input type="submit" value="Add">-->
+
         </form>
     </div>
+
+    <!--list for the todolist-->
     <div class="list">
         <ul class="list-unstyled " id="todo-list">
             <li data-ng-repeat=" item in taskList track by $index" class="taskField">
+
                 <div class="squaredFour">
+                    <!--checkbox for marking the done tasks-->
                     <input type="checkbox" class="myCheckbox" id="checkbox-{{$index}}" ng-model="item.status"
                            ng-click="isChecked()">
+                    <!--showing taskname -->
                     <label for="checkbox-{{$index}}"><span class="checkbox-{{$index}} checkbox" ng-hide="item.editing"
                                                            ng-dblclick="editItem(item)">{{item.taskName}}</span></label>
+                    <!--setting editing option-->
                     <input id="editInput" ng-show="item.editing" ng-model="item.taskName" ng-blur="doneEditing(item)"
                            autofocus ng-keypress="($event.charCode==13)?doneEditing(item):return"/>
 
-
+                    <!--button for deleting the done task-->
                     <button ng-click="remove(item)" id="cross" ng-show="item.status"><i class="fa fa-times"
                                                                                         aria-hidden="true"></i></i>
                     </button>
@@ -51,7 +60,7 @@
         </ul>
 
     </div>
-
+    <!--emptying the list-->
     <div id="wrapper"><a href="#" class="emptyStorage" ng-click="emptyStorage()">Delete the list</a></div>
 
 </div>
